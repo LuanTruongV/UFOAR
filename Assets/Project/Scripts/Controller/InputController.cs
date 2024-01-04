@@ -13,8 +13,8 @@ public class InputController : MonoBehaviour
     public Vector2 Shelve => _shelve;
 
     private float _stickyCollective;
-    public float StickyCollective=>_stickyCollective;
-    
+    public float StickyCollective => _stickyCollective;
+
     private void Awake()
     {
         _input = new MobileInput();
@@ -51,18 +51,19 @@ public class InputController : MonoBehaviour
         HandleStickyCollective();
     }
 
-    
 
     private void HandleInput()
     {
         _direction = _directionInputAction.ReadValue<Vector2>();
         _shelve = _shelveInputAction.ReadValue<Vector2>();
     }
+
     private void ClampInput()
     {
         _direction = Vector2.ClampMagnitude(_direction, 1f);
         _shelve = Vector2.ClampMagnitude(_shelve, 1f);
     }
+
     private void HandleStickyCollective()
     {
         _stickyCollective += _shelve.y * Time.deltaTime;

@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Controller;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody),typeof(InputController),typeof(UFOPhysics))]
+[RequireComponent(typeof(Rigidbody), typeof(InputController), typeof(UFOPhysics))]
 public class UFOController : MonoBehaviour
 {
     private Rigidbody _rb;
